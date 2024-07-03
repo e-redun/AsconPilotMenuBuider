@@ -1,26 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CommonLib.Services;
 
 namespace AsconPilotMenuBuider.Models
 {
-    public class PersonModel
+    public class PersonModel : ObservableObject
     {
-        private string _name;
-        private int age;
+        public string Name { get; set; }
 
-        public string Name
+        public int Age { get; set; }
+
+        public bool IsChecked
         {
-            get => _name;
-            set => _name = value;
+            get => _isChecked;
+            set => Set(ref _isChecked, value);
         }
-
-        public int Age
-        { 
-            get => age;
-            set => age = value; 
-        }
+        private bool _isChecked;
     }
 }

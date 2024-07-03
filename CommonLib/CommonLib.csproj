@@ -80,6 +80,7 @@
     <Compile Include="Services\MenuBuilder\ToolbarToggleButtonItem.cs" />
     <Compile Include="Services\ObservableObject.cs" />
     <Compile Include="Services\PropertyChangedBase.cs" />
+    <Compile Include="Services\RelayCommand.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
