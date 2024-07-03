@@ -32,6 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ascon.Pilot.SDK, Version=24.24.0.50799, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ascon.Pilot.SDK.24.24.0\lib\net472\Ascon.Pilot.SDK.dll</HintPath>
+    </Reference>
+    <Reference Include="Ascon.Pilot.Theme, Version=24.24.0.50799, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ascon.Pilot.SDK.24.24.0\lib\net472\Ascon.Pilot.Theme.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -61,17 +67,29 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Services\Ascon.Pilot.SDK.Controls.Commands\DelegateCommand.cs" />
+    <Compile Include="Services\Ascon.Pilot.SDK.Controls.Commands\DelegateCommandBase.cs" />
+    <Compile Include="Services\Ascon.Pilot.SDK.Controls.Commands\IActiveAware.cs" />
+    <Compile Include="Services\Ascon.Pilot.SDK.Controls.Commands\IRaiseCanExecuteChanged.cs" />
+    <Compile Include="Services\Ascon.Pilot.SDK.Controls.Commands\WeakEventHandlerManager.Desktop.cs" />
+    <Compile Include="Services\MenuBuilder\MenuBuilder.cs" />
+    <Compile Include="Services\MenuBuilder\MenuItemFactory.cs" />
+    <Compile Include="Services\MenuBuilder\MenuItemTypes.cs" />
+    <Compile Include="Services\MenuBuilder\ToolbarButtonItem.cs" />
+    <Compile Include="Services\MenuBuilder\ToolbarMenuButtonItem.cs" />
+    <Compile Include="Services\MenuBuilder\ToolbarToggleButtonItem.cs" />
+    <Compile Include="Services\ObservableObject.cs" />
+    <Compile Include="Services\PropertyChangedBase.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

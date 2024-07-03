@@ -7,7 +7,7 @@
     <ProjectGuid>{2417BC0D-BA49-4F63-9791-6B803025AF0E}</ProjectGuid>
     <OutputType>library</OutputType>
     <RootNamespace>AsconPilotMenuBuider</RootNamespace>
-    <AssemblyName>AsconPilotMenuBuider</AssemblyName>
+    <AssemblyName>AsconPilotMenuBuider.ext2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -39,6 +39,7 @@
       <HintPath>..\packages\Ascon.Pilot.SDK.24.24.0\lib\net472\Ascon.Pilot.Theme.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\PersonModel.cs" />
+    <Compile Include="Plugins\MainMenuPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -79,9 +81,32 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Plugins\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Views\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>::тип клиента Pilot, а также имя папки и раздела в реестре
+set CT=Pilot-ICE
+::set CT=Pilot-ICE Enterprise
+::set CT=Pilot-BIM
+
+::получение пути к папке кэша клиента Pilot
+set RV=HKEY_CURRENT_USER\Software\ASCON\%25CT%25
+for /f "tokens=2,* skip=2" %25%25a in ('reg query "%25RV%25" /v CachePath') do set CP=%25%25b
+
+::подготовка в Development папки для файлов модуля
+set DF=%25CP%25\Development\$(ProjectName)
+if exist "%25DF%25" (del /q/s "%25DF%25\*.*") else (md "%25DF%25")
+
+:подготовка списка исключений
+set EX=%25TEMP%25\excluding.txt
+echo .xml&gt;%25EX%25
+
+::копирование файлов модуля в папку
+xcopy "$(TargetDir)*.*" "%25DF%25\*.*" /Y/S/F /EXCLUDE:%25EX%25
+
+::чистим следы
+del /q %25EX%25</PostBuildEvent>
+  </PropertyGroup>
 </Project>
