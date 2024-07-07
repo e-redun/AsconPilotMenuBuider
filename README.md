@@ -5,3 +5,6 @@
 Результат
 
 ![Результат_плагина](https://github.com/e-redun/AsconPilotMenuBuider/assets/74231361/4a07722c-6bb0-4c9c-8bfb-2c619e19b581)
+
+Обсуждение
+https://asconpilot.livejournal.com/765.html
