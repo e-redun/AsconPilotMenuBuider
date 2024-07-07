@@ -5,38 +5,4 @@
         <ResourceDictionary Source="/Ascon.Pilot.Theme;component/themes/standardcontrols.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
-    <Style TargetType="TextBlock" BasedOn="{StaticResource DefaultTextBlockStyle}"/>
-
-    <system:Int32 x:Key="GridSplitterColumnWidth">20</system:Int32>
-    
-    <system:Double x:Key="MarginGap">20</system:Double>
-
-    <Thickness x:Key="TopLeftCornerMargin"
-               Left="0"
-               Top="0"
-               Right="0"
-               Bottom="0"
-               />
-
-    <Thickness x:Key="FirstRowMargin"
-               Left="{StaticResource MarginGap}"
-               Top="0"
-               Right="0"
-               Bottom="0"
-               />
-
-    <Thickness x:Key="LeftColumnMargin"
-               Left="0"
-               Top="{StaticResource MarginGap}"
-               Right="0"
-               Bottom="0"
-               />
-    
-    <Thickness x:Key="BodyMargin"
-               Left="{StaticResource MarginGap}"
-               Top="{StaticResource MarginGap}"
-               Right="0"
-               Bottom="0"
-               />
-
 </ResourceDictionary>

@@ -5,7 +5,9 @@
                             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                             xmlns:themeControls="clr-namespace:Ascon.Pilot.Theme.Controls;assembly=Ascon.Pilot.Theme"
                             mc:Ignorable="d"
-                            Title="Выбор пользователей" Height="400" Width="500"
+                            Title="Выбор пользователей"
+                            Height="350" Width="400"
+                            MinHeight="350" MinWidth="400"
                             WindowStartupLocation="CenterScreen"
                             >
     <Window.Resources>

@@ -13,7 +13,7 @@ namespace Ascon.Pilot.SDK.MainMenuSample
     public class MainMenuPlugin : IMenu<MainViewContext>
     {
         private const string DIALOG_MENU = "DialogMenu";
-        private const string DIALOG_MENU_HEADER = "Вызвать диалоговое окно";
+        private const string DIALOG_MENU_HEADER = "Тест";
 
         public void Build(IMenuBuilder builder, MainViewContext context)
         {
@@ -26,9 +26,9 @@ namespace Ascon.Pilot.SDK.MainMenuSample
             {
                 var persons = new ObservableCollection<PersonModel>()
                 {
-                    new PersonModel(){ Name = "Xxxxxxxx", Age = 20},
-                    new PersonModel(){ Name = "Yyyyy", Age = 24},
-                    new PersonModel(){ Name = "Zzzz", Age = 24}
+                    new PersonModel(){ Name = "Василий", Age = 20},
+                    new PersonModel(){ Name = "Татьяна", Age = 24},
+                    new PersonModel(){ Name = "Пётр", Age = 27}
                 };
 
                 var view = new PersonSelectorView();
